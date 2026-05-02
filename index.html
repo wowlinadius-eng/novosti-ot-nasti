@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вернулся через полтора года: Артём Соколов сыграл в Лиге чемпионов после тяжёлой травмы — Новости от Насти</title>
+<style>
+  /* ---------- Сброс и базовые ---------- */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f4f4f4;
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; cursor: pointer; }
+
+  :root {
+    --red: #e30613;
+    --red-dark: #b8050f;
+    --black: #0e0e0e;
+    --grey-1: #1a1a1a;
+    --grey-2: #2a2a2a;
+    --grey-3: #555;
+    --grey-4: #888;
+    --grey-5: #d8d8d8;
+    --grey-6: #f4f4f4;
+    --white: #fff;
+  }
+
+  /* ---------- Верхняя тонкая полоса ---------- */
+  .topbar {
+    background: var(--black);
+    color: #bbb;
+    font-size: 12px;
+    padding: 6px 0;
+    border-bottom: 1px solid #222;
+  }
+  .topbar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar a:hover { color: var(--white); }
+  .topbar-left { display: flex; gap: 18px; }
+  .topbar-right { display: flex; gap: 18px; align-items: center; }
+
+  /* ---------- Шапка с логотипом ---------- */
+  .header-main {
+    background: var(--black);
+    padding: 14px 0;
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .logo-mark {
+    width: 46px;
+    height: 46px;
+    background: var(--red);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 22px;
+    font-style: italic;
+    letter-spacing: -1px;
+    transform: skewX(-8deg);
+  }
+  .logo-text {
+    color: var(--white);
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .logo-text small {
+    display: block;
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+  .live-button {
+    background: var(--red);
+    color: var(--white);
+    padding: 8px 16px;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .live-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--white);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .header-search {
+    flex: 1;
+    max-width: 360px;
+    margin-left: auto;
+    position: relative;
+  }
+  .header-search input {
+    width: 100%;
+    background: #1c1c1c;
+    border: 1px solid #2a2a2a;
+    color: var(--white);
+    padding: 9px 14px 9px 38px;
+    font-size: 14px;
+    outline: none;
+  }
+  .header-search input::placeholder { color: #666; }
+  .header-search::before {
+    content: '🔍';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    opacity: 0.5;
+  }
+  .header-buttons { display: flex; gap: 8px; }
+  .btn-outline {
+    border: 1px solid #333;
+    background: transparent;
+    color: var(--white);
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--red); color: var(--red); }
+  .btn-filled {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-filled:hover { background: var(--red-dark); }
+
+  /* ---------- Основное навменю ---------- */
+  .nav-main {
+    background: var(--grey-1);
+    border-bottom: 3px solid var(--red);
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-item {
+    color: #ddd;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    border-right: 1px solid #2a2a2a;
+    transition: background 0.15s, color 0.15s;
+    position: relative;
+  }
+  .nav-item:first-child {
+    background: var(--red);
+    color: var(--white);
+  }
+  .nav-item:hover:not(:first-child) {
+    background: #2a2a2a;
+    color: var(--white);
+  }
+  .nav-item.has-arrow::after {
+    content: '▾';
+    margin-left: 6px;
+    font-size: 10px;
+    opacity: 0.6;
+  }
+
+  /* ---------- Контейнер контента ---------- */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 32px;
+  }
+
+  /* ---------- Хлебные крошки ---------- */
+  .breadcrumbs {
+    grid-column: 1 / -1;
+    font-size: 12px;
+    color: var(--grey-3);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .breadcrumbs a:hover { color: var(--red); }
+  .breadcrumbs span { color: #bbb; margin: 0 6px; }
+
+  /* ---------- Главная статья ---------- */
+  .article {
+    background: var(--white);
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    color: var(--grey-3);
+  }
+  .article-tag {
+    background: var(--red);
+    color: var(--white);
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .article-tag.exclusive { background: var(--black); }
+  .article-date::before {
+    content: '🕐';
+    margin-right: 4px;
+    font-size: 11px;
+  }
+  .article-title {
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 900;
+    color: var(--black);
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+  }
+  .article-lead {
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--grey-2);
+    margin-bottom: 24px;
+    font-weight: 500;
+    border-left: 4px solid var(--red);
+    padding-left: 16px;
+  }
+  .article-cover {
+    margin: 0 -32px 24px;
+    position: relative;
+  }
+  .article-cover img {
+    width: 100%;
+    display: block;
+  }
+  .article-cover-caption {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    background: rgba(0,0,0,0.75);
+    color: var(--white);
+    padding: 4px 10px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  .article-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--grey-6);
+    border-left: 3px solid var(--red);
+    margin-bottom: 28px;
+  }
+  .author-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-image: url('nastya-avatar.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--red);
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .author-info { font-size: 13px; }
+  .author-info strong { color: var(--black); display: block; font-size: 14px; }
+  .author-info span { color: var(--grey-3); }
+
+  .article-body p {
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--grey-1);
+  }
+  .article-body p:first-child::first-letter {
+    font-size: 56px;
+    font-weight: 900;
+    float: left;
+    line-height: 1;
+    margin: 4px 10px 0 0;
+    color: var(--red);
+  }
+  .article-body blockquote {
+    margin: 24px 0;
+    padding: 20px 24px;
+    background: var(--grey-6);
+    border-left: 4px solid var(--red);
+    font-size: 19px;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--grey-1);
+    font-weight: 500;
+  }
+  .article-body blockquote::before {
+    content: '«';
+    font-size: 48px;
+    line-height: 0;
+    color: var(--red);
+    vertical-align: -20px;
+    margin-right: 6px;
+  }
+
+  .article-footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--grey-5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .share-buttons { display: flex; gap: 8px; }
+  .share-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--grey-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .share-btn:hover {
+    background: var(--red);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+  .article-tags-list {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .article-tags-list a {
+    background: var(--grey-6);
+    padding: 5px 12px;
+    font-size: 12px;
+    color: var(--grey-3);
+    transition: all 0.2s;
+  }
+  .article-tags-list a:hover {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  /* ---------- Сайдбар ---------- */
+  .sidebar { display: flex; flex-direction: column; gap: 24px; }
+  .sidebar-block {
+    background: var(--white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .sidebar-title {
+    background: var(--black);
+    color: var(--white);
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--red);
+  }
+  .sidebar-list { padding: 4px 16px; }
+  .sidebar-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--grey-5);
+    cursor: pointer;
+    transition: padding 0.2s;
+  }
+  .sidebar-item:last-child { border-bottom: none; }
+  .sidebar-item:hover { padding-left: 4px; }
+  .sidebar-item-time {
+    font-size: 11px;
+    color: var(--red);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .sidebar-item-title {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--grey-1);
+    font-weight: 600;
+    transition: color 0.15s;
+  }
+  .sidebar-item:hover .sidebar-item-title { color: var(--red); }
+
+  /* Match block */
+  .match-card { padding: 16px; }
+  .match-status {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .match-status.live::before {
+    content: '●';
+    margin-right: 4px;
+    animation: pulse 1.5s infinite;
+  }
+  .match-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+  }
+  .match-team {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .team-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--grey-5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .team-logo.zenit { background: linear-gradient(135deg,#0066b3,#003d6b); color: white; }
+  .team-logo.ajax { background: linear-gradient(135deg,#d2122e,#fff 50%, #d2122e); color: #d2122e; }
+  .match-score {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--black);
+  }
+  .match-score .live-score { color: var(--red); }
+
+  /* ---------- Блок "Читайте также" ---------- */
+  .related-section {
+    grid-column: 1 / -1;
+    margin-top: 16px;
+  }
+  .related-title {
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    color: var(--black);
+    border-bottom: 3px solid var(--red);
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .related-card {
+    background: var(--white);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .related-card:hover { transform: translateY(-4px); }
+  .related-img {
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(135deg, #2a2a2a, #555);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 24px;
+    font-weight: 800;
+  }
+  .related-img.bg1 { background: linear-gradient(135deg,#0066b3,#001f3f); }
+  .related-img.bg2 { background: linear-gradient(135deg,#e30613,#5a0008); }
+  .related-img.bg3 { background: linear-gradient(135deg,#1e7c2c,#0a3d12); }
+  .related-img.bg4 { background: linear-gradient(135deg,#6b3aa0,#1f0f3a); }
+  .related-img-tag {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: var(--red);
+    color: var(--white);
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .related-content { padding: 14px; }
+  .related-time {
+    font-size: 11px;
+    color: var(--red);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  .related-headline {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: var(--grey-1);
+    transition: color 0.15s;
+  }
+  .related-card:hover .related-headline { color: var(--red); }
+
+  /* ---------- Футер ---------- */
+  footer {
+    background: var(--black);
+    color: #999;
+    padding: 40px 0 20px;
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-col h4 {
+    color: var(--white);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    font-weight: 800;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { padding: 5px 0; }
+  .footer-col a:hover { color: var(--red); }
+  .footer-logo-text {
+    font-weight: 900;
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  .footer-logo-text span { color: var(--red); }
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 30px auto 0;
+    padding: 20px 20px 0;
+    border-top: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #666;
+  }
+  .age-mark {
+    display: inline-block;
+    border: 1px solid #555;
+    padding: 2px 7px;
+    font-weight: 700;
+    color: #999;
+    margin-right: 8px;
+  }
+
+  /* ---------- Адаптив ---------- */
+  @media (max-width: 980px) {
+    .container { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .article-title { font-size: 28px; }
+    .article-lead { font-size: 17px; }
+    .header-search { display: none; }
+  }
+  @media (max-width: 560px) {
+    .article { padding: 20px; }
+    .article-cover { margin: 0 -20px 20px; }
+    .article-title { font-size: 24px; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .topbar-left { gap: 10px; }
+    .header-buttons { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ВЕРХНЯЯ ПОЛОСА -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a>Тех. поддержка</a>
+      <a>Контакты</a>
+      <a>Реклама</a>
+    </div>
+    <div class="topbar-right">
+      <a>Войти</a>
+      <a>Подписка</a>
+    </div>
+  </div>
+</div>
+
+<!-- ШАПКА -->
+<header class="header-main">
+  <div class="header-inner">
+    <a class="logo">
+      <div class="logo-mark">Н</div>
+      <div class="logo-text">
+        Новости
+        <small>от Насти</small>
+      </div>
+    </a>
+    <div class="live-button">
+      <span class="live-dot"></span>
+      ЭФИР
+    </div>
+    <div class="header-search">
+      <input type="text" placeholder="Поиск по сайту...">
+    </div>
+    <div class="header-buttons">
+      <button class="btn-outline">Каналы</button>
+      <button class="btn-filled">Подписка</button>
+    </div>
+  </div>
+</header>
+
+<!-- НАВИГАЦИЯ -->
+<nav class="nav-main">
+  <div class="nav-inner">
+    <a class="nav-item">Главная</a>
+    <a class="nav-item has-arrow">Футбол</a>
+    <a class="nav-item has-arrow">Хоккей</a>
+    <a class="nav-item">Баскетбол</a>
+    <a class="nav-item">UFC</a>
+    <a class="nav-item">Теннис</a>
+    <a class="nav-item">Формула-1</a>
+    <a class="nav-item">Биатлон</a>
+    <a class="nav-item">Фигурное катание</a>
+    <a class="nav-item">Эксклюзив</a>
+  </div>
+</nav>
+
+<!-- КОНТЕЙНЕР -->
+<main class="container">
+  <!-- Хлебные крошки -->
+  <div class="breadcrumbs">
+    <a>Главная</a> <span>›</span>
+    <a>Футбол</a> <span>›</span>
+    <a>Лига чемпионов</a> <span>›</span>
+    <a style="color: var(--grey-4);">Артём Соколов вернулся в строй</a>
+  </div>
+
+  <!-- ОСНОВНАЯ СТАТЬЯ -->
+  <article class="article">
+    <div class="article-meta">
+      <span class="article-tag">Футбол</span>
+      <span class="article-tag exclusive">Эксклюзив от Насти</span>
+      <span class="article-date">Сегодня, 23:14</span>
+      <span>·</span>
+      <span>👁 14 287</span>
+    </div>
+
+    <h1 class="article-title">Вернулся через полтора года: Артём Соколов сыграл в Лиге чемпионов после тяжёлой травмы</h1>
+
+    <p class="article-lead">
+      Полузащитник «Зенита» Артём Соколов впервые за 18 месяцев вышел на поле в матче Лиги чемпионов против «Аякса», за время восстановления после операции на ноге успев жениться и стать отцом.
+    </p>
+
+    <div class="article-cover">
+      <img src="cover.png" alt="Артём Соколов: возвращение в футбол и свадьба">
+      <div class="article-cover-caption">Фото: пресс-служба ФК «Зенит» / личный архив А. Соколова</div>
+    </div>
+
+    <div class="article-author">
+      <div class="author-avatar"></div>
+      <div class="author-info">
+        <strong>Анастасия Деева</strong>
+        <span>Корреспондент · Эксклюзив для «Новостей от Насти»</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <p>
+        Полузащитник сборной России Артём Соколов впервые за 18 месяцев вышел на поле в официальном матче, появившись на замену во встрече Лиги чемпионов против амстердамского «Аякса». 26-летний футболист «Зенита» провёл на поле последние 20 минут игры и помог команде удержать победный счёт 2:1.
+      </p>
+
+      <p>
+        Соколов выбыл из строя в октябре 2024 года после серьёзной травмы ноги, полученной в столкновении на тренировке, и перенёс две операции. За полтора года восстановления хавбек успел жениться на давней возлюбленной — телеведущей Анне Лебедевой — и провести медовый месяц на Мальдивах.
+      </p>
+
+      <blockquote>
+        Эти полтора года были самыми тяжёлыми в моей жизни, но рядом была семья — без жены я бы не справился.
+      </blockquote>
+
+      <p>
+        До травмы Соколов считался одним из лидеров сборной России и в товарищеском матче с Чехией оформил дубль, помог команде победить 4:2. Сейчас полузащитник готовится вернуться в основной состав «Зенита» в матчах РПЛ.
+      </p>
+
+      <p>
+        Главный тренер сине-бело-голубых отметил, что возвращение Соколова — «лучший подарок команде в концовке сезона».
+      </p>
+    </div>
+
+    <div class="article-footer">
+      <div class="article-tags-list">
+        <a>#Зенит</a>
+        <a>#Лига чемпионов</a>
+        <a>#Артём Соколов</a>
+        <a>#Аякс</a>
+        <a>#РПЛ</a>
+      </div>
+      <div class="share-buttons">
+        <div class="share-btn" title="ВКонтакте">VK</div>
+        <div class="share-btn" title="Telegram">TG</div>
+        <div class="share-btn" title="Одноклассники">OK</div>
+        <div class="share-btn" title="Скопировать ссылку">🔗</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- САЙДБАР -->
+  <aside class="sidebar">
+    <!-- Матч-центр -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">Матч-центр</div>
+      <div class="match-card">
+        <span class="match-status live">live · 78'</span>
+        <div class="match-row">
+          <div class="match-team">
+            <div class="team-logo zenit">З</div>
+            <span>Зенит</span>
+          </div>
+          <div class="match-score"><span class="live-score">2</span></div>
+        </div>
+        <div class="match-row">
+          <div class="match-team">
+            <div class="team-logo ajax">А</div>
+            <span>Аякс</span>
+          </div>
+          <div class="match-score"><span class="live-score">1</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Другие новости -->
+    <div class="sidebar-block">
+      <div class="sidebar-title">Главные новости</div>
+      <div class="sidebar-list">
+        <div class="sidebar-item">
+          <div class="sidebar-item-time">5 минут назад</div>
+          <div class="sidebar-item-title">Карпин назвал состав сборной России на ноябрьские товарищеские матчи</div>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-time">22 минуты назад</div>
+          <div class="sidebar-item-title">«Спартак» — ЦСКА: где смотреть прямую трансляцию дерби</div>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-time">Час назад</div>
+          <div class="sidebar-item-title">Овечкин забросил 900-ю шайбу в карьере НХЛ</div>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-time">2 часа назад</div>
+          <div class="sidebar-item-title">Медведев пробился в полуфинал турнира ATP Финалс</div>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-time">3 часа назад</div>
+          <div class="sidebar-item-title">«Краснодар» обыграл «Ростов» и сохранил лидерство в РПЛ</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Эксклюзив от Насти -->
+    <div class="sidebar-block">
+      <div class="sidebar-title" style="background: var(--red);">Эксклюзив от Насти</div>
+      <div class="sidebar-list">
+        <div class="sidebar-item">
+          <div class="sidebar-item-time">Вчера</div>
+          <div class="sidebar-item-title">Кто на самом деле виноват в провале сборной — большой разбор</div>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-item-time">2 дня назад</div>
+          <div class="sidebar-item-title">Звёзды РПЛ, которых мы потеряем летом: топ-5 переходов</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- БЛОК "ЧИТАЙТЕ ТАКЖЕ" -->
+  <section class="related-section">
+    <h2 class="related-title">Читайте также</h2>
+    <div class="related-grid">
+      <div class="related-card">
+        <div class="related-img bg1">
+          <span>⚽</span>
+          <span class="related-img-tag">Футбол</span>
+        </div>
+        <div class="related-content">
+          <div class="related-time">15 минут назад</div>
+          <div class="related-headline">«Зенит» обыграл «Аякс» в Лиге чемпионов и приблизился к плей-офф</div>
+        </div>
+      </div>
+      <div class="related-card">
+        <div class="related-img bg2">
+          <span>🏟️</span>
+          <span class="related-img-tag">Эксклюзив</span>
+        </div>
+        <div class="related-content">
+          <div class="related-time">Сегодня, 19:42</div>
+          <div class="related-headline">Семак — о Соколове: «Это игрок, который меняет матчи в одиночку»</div>
+        </div>
+      </div>
+      <div class="related-card">
+        <div class="related-img bg3">
+          <span>🏆</span>
+          <span class="related-img-tag">Лига чемпионов</span>
+        </div>
+        <div class="related-content">
+          <div class="related-time">Сегодня, 18:10</div>
+          <div class="related-headline">Все результаты тура Лиги чемпионов: «Реал» проиграл, «Бавария» — лидирует</div>
+        </div>
+      </div>
+      <div class="related-card">
+        <div class="related-img bg4">
+          <span>👰</span>
+          <span class="related-img-tag">Светская хроника</span>
+        </div>
+        <div class="related-content">
+          <div class="related-time">Полгода назад</div>
+          <div class="related-headline">Свадьба года: Артём Соколов и Анна Лебедева — фоторепортаж с торжества</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ФУТЕР -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-logo-text">НОВОСТИ <span>ОТ НАСТИ</span></div>
+      <p style="color: #888; font-size: 13px; line-height: 1.6;">
+        Спортивные новости, эксклюзивы и аналитика. Только проверенные факты — и немного эмоций от автора.
+      </p>
+      <div style="margin-top: 16px; display: flex; gap: 10px;">
+        <div class="share-btn" style="background: #1c1c1c; color: #ccc;">VK</div>
+        <div class="share-btn" style="background: #1c1c1c; color: #ccc;">TG</div>
+        <div class="share-btn" style="background: #1c1c1c; color: #ccc;">OK</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>О нас</h4>
+      <ul>
+        <li><a>О проекте</a></li>
+        <li><a>Контакты</a></li>
+        <li><a>Реклама</a></li>
+        <li><a>Вакансии</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Разделы</h4>
+      <ul>
+        <li><a>Футбол</a></li>
+        <li><a>Хоккей</a></li>
+        <li><a>Эксклюзив</a></li>
+        <li><a>Матч-центр</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Документы</h4>
+      <ul>
+        <li><a>Пользовательское соглашение</a></li>
+        <li><a>Политика обработки данных</a></li>
+        <li><a>Правила комментариев</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>
+      <span class="age-mark">18+</span>
+      © 2026 «Новости от Насти». Все права защищены.
+    </div>
+    <div>Сайт является пародией / учебным проектом.</div>
+  </div>
+</footer>
+
+</body>
+</html>
